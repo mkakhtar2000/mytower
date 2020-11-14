@@ -1,0 +1,24 @@
+---
+# tasks file for vols-assignment
+
+- name: Create a logical volume of 10M
+  lvol:
+    vg: vgdata
+    lv: vol1
+    size: 10M
+    force: yes
+
+- name: Create a logical volume of 20M
+  lvol:
+    vg: vgdata
+    lv: vol2
+    size: 20M
+    force: yes
+- name: Create a logical volume of 30M
+  lvol:
+    vg: vgdata
+    lv: vol3
+    size: 30M
+    force: yes
+
+  when: ansible_distribution == "CentOS" and  ansible_lvm.lvs.lvdata1.vg == "vgdata"

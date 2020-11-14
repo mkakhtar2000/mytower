@@ -1,0 +1,8 @@
+---
+# tasks file for http-setup
+- name: import package install task
+  import_task: package_task_install.yml
+
+- name: service start for installed package
+  import_tasks: service_start.yml
+

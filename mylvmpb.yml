@@ -1,0 +1,9 @@
+---
+- name: a playbook to create lvm volumes
+  hosts: lab
+  user: docker
+  become: true
+  roles:
+    - ./roles/vols-assignment
+  
+   

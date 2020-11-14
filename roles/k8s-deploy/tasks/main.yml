@@ -1,0 +1,12 @@
+---
+# tasks file for k8s-deploy
+- name: deploying file to k8s
+  template:
+     src: httpd-template.j2
+     dest: /home/docker/deployment/{{app_name}}_deployment.yml
+- shell: /usr/bin/kubectl get ns {{ namespace }}
+  register: nsoutput
+- shell: /usr/bin/kubectl create ns {{ namespace }}
+  when: nsoutput.rc > 0
+- shell: /usr/bin/kubectl apply -f /home/docker/deployment/httpd_deployment.yml
+

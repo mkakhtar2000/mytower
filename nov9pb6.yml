@@ -1,0 +1,8 @@
+---
+- name: removing file from managed hosts
+  hosts: test
+  tasks:
+    - name: removing unwanted files from hosts
+      file:
+        dest: /tmp/mynicefile.txt
+        state: absent

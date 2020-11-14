@@ -1,0 +1,8 @@
+---
+# vars file for k8s-deploy
+app_name: httpd
+namespace: pats
+replica: 2
+my_image: httpd
+port: 80
+
