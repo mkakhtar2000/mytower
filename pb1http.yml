@@ -1,8 +1,9 @@
 ---
 - name: install package on the linux server
   hosts: all
-  become: yes
-  var_files:
+  user: docker
+  become: true  
+  vars_files:
     - vars/common_vars.yml
     - vars/cred.yml
   tasks:
