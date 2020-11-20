@@ -1,0 +1,17 @@
+---
+- name: install package on the linux server
+  hosts: lab
+  become: yes
+  var_files:
+    - vars/common_vars.yml
+    - vars/cred.yml
+  tasks:
+  - name: Install required packages in labs servers  from tower
+    yum:
+      name: "{{ pkg_name }}"
+      state: present
+  - name: start services
+    service:
+      name: "{{ service_name }}"
+      state: "{{ service_status }}"
+      enabled: true 
