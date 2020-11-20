@@ -1,6 +1,6 @@
 ---
 - name: install package on the linux server
-  hosts: lab
+  hosts: all
   become: yes
   var_files:
     - vars/common_vars.yml
