@@ -1,6 +1,6 @@
 ---
 - name: install package on the linux server
-  hosts: lab
+  hosts: all
 #  user: docker
 #  become: true  
   vars_files:
